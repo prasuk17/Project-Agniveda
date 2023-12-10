@@ -1,0 +1,26 @@
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=KXpglDSm"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+<textarea id="text" cols="45" rows="3" >
+<!-- replace with your text START-->
+Web designers generally have nothing to do with creating content for their projects. Even so, the look of a site can be incomplete if no words are included. Web designers need to find ways to incorporate copyright-free content into their designs to provide clients with a look that is as finished as possible.
+Creating a prototype website that also contains copy and images is the only way to help the client understand what the concept behind your design is. Without these elements, the finished product can look quite odd, and the client won’t be able to mentally project his own content uploaded on the site.
+<!-- replace with your text  END-->
+</textarea>
+ 
+<select id="voiceselection"></select> 
+ 
+<input 
+  onclick="responsiveVoice.speak($('#text').val(),$('#voiceselection').val());" 
+  type="button" 
+  value="Read this for me" 
+/>
+ 
+<script>
+        //Populate voice selection dropdown
+        var voicelist = responsiveVoice.getVoices();
+        var vselect = $("#voiceselection");
+        $.each(voicelist, function() {
+                vselect.append($("<option />").val(this.name).text(this.name));
+        });
+</script>
